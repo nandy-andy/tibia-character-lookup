@@ -1,6 +1,6 @@
 var id,
-  tibiaCharacterLookupUrl = 'https://secure.tibia.com/community/?subtopic=characters&name=',
-      characterName = '';
+    tibiaCharacterLookupUrl = 'https://secure.tibia.com/community/?subtopic=characters&name=',
+    characterName = '';
 
 function lookupCharacter(info, tab) {
   characterName = info.selectionText;
