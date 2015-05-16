@@ -1,7 +1,7 @@
 var id,
     tibiaCharacterLookupUrl = 'https://secure.tibia.com/community/?subtopic=characters&name=',
-    characterName = ''
-    ga = ga || function () {};
+    characterName = '',
+    ga = ga || function() {};
 
 function lookupCharacter(info, tab) {
   ga('send', 'event', 'context-menu-item', 'click', 'tibia-com-search');

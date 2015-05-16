@@ -4,4 +4,5 @@
 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-62603241-1', 'auto');
+ga('set', 'checkProtocolTask', null);
 ga('send', 'pageview');
