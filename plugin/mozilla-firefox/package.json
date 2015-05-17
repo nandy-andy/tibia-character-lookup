@@ -1,0 +1,9 @@
+{
+  "name": "tibia-character-lookup",
+  "title": "Tibia Character Lookup Addon",
+  "id": "jid1-VIjKYXwgMBtVug",
+  "description": "This addon will lookup for a Tibia character with name of selected text",
+  "author": "Andrzej 'nAndy' Łukaszewski",
+  "license": "GNU 2.0",
+  "version": "0.1.7"
+}
