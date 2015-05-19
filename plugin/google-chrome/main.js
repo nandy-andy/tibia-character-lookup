@@ -22,6 +22,7 @@ function lookupCharacter(info, tab) {
 }
 
 function handleHomepageButtonClick() {
+  ga('send', 'event', 'homepage-button', 'click');
   chrome.tabs.create({
     url: tibiaCharacterLookupHomepageUrl
   });
