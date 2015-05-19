@@ -5,4 +5,8 @@
 
 ga('create', 'UA-62603241-1', 'auto');
 ga('set', 'checkProtocolTask', null);
+ga('set', {
+  page: '/tibia-character-lookup',
+  title: 'Tibia character lookup background script'
+});
 ga('send', 'pageview');

@@ -13,7 +13,7 @@ menuItem = chrome.contextMenus.create({
 });
 
 function lookupCharacter(info, tab) {
-  ga('send', 'event', 'context-menu-item', 'click', 'tibia-com-search');
+  ga('send', 'event', 'chrome/context-menu-item', 'click', 'tibia-com-search');
   characterName = info.selectionText;
 
   chrome.tabs.create({
@@ -22,7 +22,7 @@ function lookupCharacter(info, tab) {
 }
 
 function handleHomepageButtonClick() {
-  ga('send', 'event', 'homepage-button', 'click');
+  ga('send', 'event', 'chrome/homepage-button', 'click');
   chrome.tabs.create({
     url: tibiaCharacterLookupHomepageUrl
   });
