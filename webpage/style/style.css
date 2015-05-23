@@ -49,6 +49,7 @@ border-bottom:1px dashed #fff !important;
 color:#3334a5 !important;
 border-bottom:none;
 font-weight:bold;
+margin: 0 1px;
 }
 
 .navbar .active a{
