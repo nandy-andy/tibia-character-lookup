@@ -1,4 +1,6 @@
 <?php
+include_once('config.php');
+
 $validCategories = array(
     'firefox/homepage-button' => true,
     'firefox/context-menu-item' => true,
@@ -29,7 +31,9 @@ class Analytics {
 
     public function __construct() {
         try {
-            $this->pdo = new PDO('mysql:dbname=morwo_tibia;host=127.0.0.1', 'morwo_tibia', 'R92bsT5N');
+            $this->pdo = new PDO(
+                sprintf('mysql:dbname=%s;host=%s', DB_NAME, DB_HOST), DB_USER, DB_PASS
+            );
             $this->pdo->exec("SET CHARACTER SET utf8");
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch(PDOException $e) {
