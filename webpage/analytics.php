@@ -14,10 +14,24 @@ if( $_POST['data'] ) {
     }
 } else if( $_GET['show-analytics'] ) {
     $analytics = new Analytics();
-    $data = $analytics->getAnalytics();
+    $data = $analytics->getAnalyticsTotal();
     echo '<pre>';
     foreach($data as $row) {
         echo $row['category_name'] . ': ' . $row['count'] . PHP_EOL;
+    }
+    echo '</pre>';
+
+    $data = $analytics->getAnalytics('firefox/context-menu-item');
+    echo '<strong>firefox/context-menu-item</strong><br /><pre>';
+    foreach($data as $row) {
+        echo $row['day'] . ': ' . $row['count'] . PHP_EOL;
+    }
+    echo '</pre>';
+
+    $data = $analytics->getAnalytics('firefox/homepage-button');
+    echo '<strong>firefox/homepage-button</strong><br /><pre>';
+    foreach($data as $row) {
+        echo $row['day'] . ': ' . $row['count'] . PHP_EOL;
     }
     echo '</pre>';
 } else {
@@ -55,10 +69,28 @@ class Analytics {
         $stm->execute();
     }
 
-    public function getAnalytics() {
+    public function getAnalyticsTotal() {
         $sql = 'select category_name, count(timestamp) as count from '.$this->table.' group by category_name';
         $res = array();
 
+        try {
+            $stm = $this->pdo->prepare($sql);
+            $stm->execute();
+            $res = $stm->fetchAll();
+        } catch(Exception $e) {
+            $res['error'] = $e->getMessage();
+        }
+
+        return $res;
+    }
+
+    public function getAnalytics($category) {
+        $sql = 'select SUBSTRING(FROM_UNIXTIME(timestamp), 1, 10) as day, count(timestamp) as count
+from ' . $this->table . '
+where category_name = "' . $category . '"
+group by SUBSTRING(FROM_UNIXTIME(timestamp), 1, 10);';
+
+        $res = array();
         try {
             $stm = $this->pdo->prepare($sql);
             $stm->execute();
