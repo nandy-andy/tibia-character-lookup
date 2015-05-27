@@ -1,5 +1,5 @@
 # Tibia character lookup
-A simple [Google Chrome](http://chrome.google.com) extension which make it easy to look up a [Tibia](http://www.tibia.com) character.
+A simple [Google Chrome](http://chrome.google.com) extension and [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/new/) add-on which make it easy to look up a [Tibia](http://www.tibia.com) character.
 
 # How does it work?
 You can check it on [the official page of the extension](http://lukaszewski.it/tibia-character-lookup).
