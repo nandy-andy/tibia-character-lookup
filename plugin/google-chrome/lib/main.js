@@ -4,16 +4,15 @@ require.config({
 
 require(
   [
+    'ga',
     'tibia.com',
     'homepage'
   ],
   function (
+    ga,
     tibiaCom,
     homepage
   ) {
-    var characterName = '',
-        ga = ga || function () {};
-
     chrome.browserAction.onClicked.addListener(handleHomepageButtonClick);
 
     chrome.contextMenus.create({
@@ -24,15 +23,15 @@ require(
 
     function lookupCharacter(info, tab) {
       ga('send', 'event', 'chrome/context-menu-item', 'click', 'tibia-com-search');
-      characterName = info.selectionText;
 
       chrome.tabs.create({
-        url: tibiaCom.getSiteUrl(characterName)
+        url: tibiaCom.getSiteUrl(info.selectionText)
       });
     }
 
     function handleHomepageButtonClick() {
       ga('send', 'event', 'chrome/homepage-button', 'click');
+
       chrome.tabs.create({
         url: homepage.getSiteUrl()
       });
