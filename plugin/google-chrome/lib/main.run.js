@@ -26,7 +26,7 @@ require(
     chrome.contextMenus.create({
       "title": "Lookup Tibia character...",
       "contexts": ["selection"],
-      "onclick": function () {
+      "onclick": function (info) {
         ga('send', 'event', 'chrome/context-menu-item', 'click', 'tibia-com-search');
 
         chrome.tabs.create({
