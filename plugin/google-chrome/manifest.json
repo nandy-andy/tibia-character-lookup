@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Tibia Character Lookup Extension",
   "description": "This extension will lookup for a Tibia character with name of selected text",
-  "version": "0.8.8",
+  "version": "0.8.9",
   "browser_action": {
     "default_icon": "icons/icon.png",
     "default_title": "Visit Tibia Character Lookup homepage"

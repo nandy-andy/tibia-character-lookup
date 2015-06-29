@@ -1,0 +1,12 @@
+{
+  "name": "tibia-character-lookup",
+  "version": "0.8.9",
+  "homepage": "http://lukaszewski.it/tibia-character-lookup/",
+  "authors": [
+    "Andrzej 'nAndy' Łukaszewski"
+  ],
+  "description": "Google Chrome extension which let's a user to lookup for a Tibia character with name of selected text.",
+  "devDependencies": {
+    "qunit": "~1.17.1"
+  }
+}
