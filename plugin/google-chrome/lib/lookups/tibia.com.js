@@ -1,5 +1,5 @@
 define('tibia.com', function() {
-  var lookupUrl = 'https://secure.tibia.com/community/?subtopic=characters&name=';
+  var lookupUrl = 'https://www.tibia.com/community/?name=';
 
   function getSiteUrl(characterName) {
     var validatedCharacterName = characterName.split(' ').join('+'),
